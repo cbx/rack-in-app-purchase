@@ -20,7 +20,14 @@ module Rack
     disable :raise_errors, :show_exceptions
 
     configure do
-      Sequel.extension :core_extensions, :migration
+      if RUBY_VERSION >= '2.0.0'
+        Sequel.extension :core_refinements
+        using Sequel::CoreRefinements
+      else
+        Sequel.extension :core_extensions
+      end
+
+      Sequel.extension :migration
 
       if ENV['DATABASE_URL']
         DB = Sequel.connect(ENV['DATABASE_URL'])

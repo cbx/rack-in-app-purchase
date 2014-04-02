@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Mattt Thompson"]
   s.email       = "m@mattt.me"
   s.homepage    = "http://mattt.me"
-  s.version     = '0.1.1'
+  s.version     = '0.1.2'
   s.platform    = Gem::Platform::RUBY
   s.summary     = "Rack::InAppPurchase"
   s.description = "Rack middleware for in-app purchase receipt verification and product listing."
